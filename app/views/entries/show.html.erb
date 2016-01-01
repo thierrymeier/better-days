@@ -4,6 +4,7 @@
 
 <div class="entry">
   <p>
+    <%= "I was in #{@entry.location} and #{@entry.rating} out of 10 people would bang." %><br /> <br />
     <%= (h @entry.content).gsub("\n", "<br />").html_safe %>
 
   </p>

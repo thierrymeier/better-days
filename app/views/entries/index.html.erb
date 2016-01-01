@@ -4,9 +4,12 @@
 
 <div class="show-entries">
     <ul>
-      <% @entries.each do |entry| %>
-        <li><%= link_to entry.created_at.strftime("%A, %d of %B %Y"), entry %></li>
-      <% end %>
+        <% @entries.each do |entry| %>
+          <li><%= link_to entry.created_at.strftime("%A, %d of %B %Y"), entry %></li>
+        <% end %>
+        
+        <%= "I couldn't find any journal entries yet 😟." if @entries.count == 0 %>
+        
     </ul>
 </div>
 
