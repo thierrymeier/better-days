@@ -1,5 +1,12 @@
-<h1>New Entry</h1>
-
-<%= render 'form' %>
-
+<div class="create-entry">
+    
+    <div class="form-title">
+        <h1><%= Time.now.strftime("%A, %d of %B") %></h1>
+    </div>
+    
+    <div class="create-form">
+        <%= render 'form' %>
+    </div>
+    
 <%= link_to 'Back', entries_path %>
+</div>

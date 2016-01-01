@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery
+//= require retina_tag
 //= require bootstrap-sprockets
+//= require jquery.autosize

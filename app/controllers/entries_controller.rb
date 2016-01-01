@@ -1,20 +1,27 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
+  
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    @entries = current_user.entries.order('entries.created_at DESC')
   end
 
   # GET /entries/1
   # GET /entries/1.json
   def show
+    check_user
+  end
+  
+  def check_user
+    redirect_to root_path, notice: "Restricted area!" if !current_user.entries.include?(@entry)
   end
 
   # GET /entries/new
   def new
-    @entry = Entry.new
+    @entry = current_user.entries.build
   end
 
   # GET /entries/1/edit
@@ -24,7 +31,7 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(entry_params)
+    @entry = current_user.entries.build(entry_params)
 
     respond_to do |format|
       if @entry.save
@@ -71,4 +78,10 @@ class EntriesController < ApplicationController
     def entry_params
       params.require(:entry).permit(:location, :rating, :content)
     end
+    
+    def correct_user
+      @pin = current_user.entries.find_by(id: params[:id])
+      redirect_to entries_path, notice: "not authorized to do that" if @entry.nil?
+    end
+    
 end

@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ 
+ body {
+     -webkit-font-smoothing: antialiased;
+ }
+ 
+ .btn {
+  font-size: 18px;
+  height: 50px;
+  font-weight: 600;
+  padding-top: 14px;
+  padding-left: 22px;
+  padding-right: 22px;
+ }

@@ -1,19 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="entry-title">
+  <h1><%= @entry.created_at.strftime("%A, %d of %B") %></h1>
+</div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @entry.location %>
-</p>
+<div class="entry">
+  <p>
+    <%= (h @entry.content).gsub("\n", "<br />").html_safe %>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @entry.rating %>
-</p>
+  </p>
+</div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @entry.content %>
-</p>
-
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<div class="entry-actions">
+  <%= link_to 'Edit', edit_entry_path(@entry), class: 'btn btn-primary' %>
+</div>

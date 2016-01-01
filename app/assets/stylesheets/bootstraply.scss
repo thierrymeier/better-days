@@ -1,5 +1,9 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 
+// Colors
+$brand-primary: rgb(0, 0, 0);
+
+// Typography
 $font-family-sans-serif: "Neuzeit Grotesk";
 
 @import "bootstrap-sprockets";

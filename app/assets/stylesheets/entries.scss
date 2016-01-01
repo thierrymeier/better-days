@@ -1,3 +1,69 @@
 // Place all the styles related to the entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+*:focus {outline: none;}
+
+
+.form-title h1, .entry-title h1 {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.create-form {
+    text-align: center;
+    margin-top: 10px;
+    
+    .field {
+        padding-bottom: 30px;
+    }
+    
+    input, textarea {
+        border: none;
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    textarea {
+        width: 700px;
+        min-height: 150px;
+    }
+}
+
+.entry {
+    
+    p {
+        font-size: 18px;
+        text-align: center;
+        width: 740px;
+        margin: 0 auto;
+    }
+}
+
+.entry-actions {
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.new-entry {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.show-entries ul {
+    font-size: 18px;
+    list-style-type: none;
+    padding-left: 0px;
+    text-align: center;
+    
+    li {
+        line-height: 34px;
+    }
+    
+    a {
+        color: black;
+    }
+}
